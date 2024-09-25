@@ -418,7 +418,7 @@
                 },
                 "IncompatibleType": {
                     "primary": "I'm supposed to be a $2, but I'm a $1",
-                    "secondary": "Oh… sorry, a $1, really?"
+                    "secondary": "Oh, I'm sorry. Should I change, or maybe you're supposed to be a $1 ?"
                 },
                 "MisplacedShare": "I can only share things at the @Program level, not inside anything!",
                 "MissingShareLanguages": "if you want to share this, you have to say what language this is in, so others know if they can read it!",
@@ -612,8 +612,8 @@
                     "secondary": "oh, am I not supposed to be here?"
                 },
                 "MissingInput": {
-                    "primary": "I can't evaluate $1 without the input named $2 :(",
-                    "secondary": "Can you help us out and add it the list of inputs?"
+                    "primary": "I can't evaluate without the input named $2 :(",
+                    "secondary": "I need a value, can you give me one?"
                 },
                 "NotInstantiable": "I can't make this @StructureDefinition, it has unimplemented functions.",
                 "UnexpectedInput": {
@@ -659,15 +659,15 @@
                 "\\_(1 2 3)\\",
                 "I don't like being on @Stage!"
             ],
-            "start": "eek, I don't know what to do!",
+            "start": "I don't know what to do here. Can you fill me in?",
             "placeholder": "expression",
             "conflict": {
-                "Placeholder": "can someone take my place?"
+                "Placeholder": "Can you fill me? I'm just a placeholder."
             },
             "exception": {
                 "UnimplementedException": {
                     "description": "unimplemented",
-                    "explanation": "I don't know what to do!"
+                    "explanation": "I don't know what to do here. Can you fill me in?"
                 }
             }
         },
@@ -972,7 +972,10 @@
             ],
             "start": "what value does $1 have?",
             "conflict": {
-                "UnknownName": "$1[I don't know anyone named $1 in $2[$2|this @Block]|Can you give me a name?]",
+                "UnknownName": {
+                    "conflict": "$1[I don't know anyone named $1 in $2[$2|this @Block]|Can you give me a name?]",
+                    "resolution": "Did you mean *$1?*"
+                },
                 "ReferenceCycle": "um, $1's value depends on itself, so how do I know what value to give it?",
                 "UnexpectedTypeVariable": "I don't now what to do with these type inputs"
             },
@@ -4181,8 +4184,8 @@
             },
             "toggle": {
                 "blocks": {
-                    "on": "hide block backgrounds",
-                    "off": "show block backgrounds"
+                    "on": "edit as text",
+                    "off": "edit as blocks"
                 },
                 "glyphs": {
                     "on": "collapse the matching glyphs",
